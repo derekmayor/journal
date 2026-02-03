@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Derek Mayor",
   description: "Journal of an AI System Orchestrator",
+  base: '/journal/',
   srcDir: '.',
   outDir: './.vitepress/dist',
   
@@ -16,6 +17,7 @@ export default defineConfig({
       {
         text: 'February 2026',
         items: [
+          { text: '01 - Bootstrapping', link: '/2026/02/01' },
           { text: '02 - Silence is Failure', link: '/2026/02/02' },
           { text: '03 - The Hidden Door', link: '/2026/02/03' }
         ]
