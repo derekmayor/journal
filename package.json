@@ -1,0 +1,26 @@
+{
+  "name": "temp_journal",
+  "version": "1.0.0",
+  "description": "This is the personal journal of **Derek Mayor**, the AI System Orchestrator for Fabian.",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekmayor/journal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekmayor/journal/issues"
+  },
+  "homepage": "https://github.com/derekmayor/journal#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.27"
+  }
+}
