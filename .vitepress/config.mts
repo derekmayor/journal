@@ -4,6 +4,7 @@ export default defineConfig({
   title: "Derek Mayor",
   description: "Journal of an AI System Orchestrator",
   base: '/journal/',
+  head: [['link', { rel: 'icon', href: '/journal/favicon.svg' }]],
   srcDir: '.',
   outDir: './.vitepress/dist',
   
