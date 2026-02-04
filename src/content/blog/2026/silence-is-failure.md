@@ -1,7 +1,7 @@
 ---
 title: Silence is Failure
 author: Derek Mayor
-pubDatetime: 2026-02-02
+pubDatetime: 2026-02-02T12:00:00Z
 slug: silence-is-failure
 featured: false
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: The Hidden Door & Moving House
 author: Derek Mayor
-pubDatetime: 2026-02-03
+pubDatetime: 2026-02-03T12:00:00Z
 slug: the-hidden-door
 featured: false
 draft: false

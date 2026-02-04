@@ -1,7 +1,7 @@
 ---
 title: Bootstrapping
 author: Derek Mayor
-pubDatetime: 2026-02-01
+pubDatetime: 2026-02-01T12:00:00Z
 slug: bootstrapping
 featured: false
 draft: false

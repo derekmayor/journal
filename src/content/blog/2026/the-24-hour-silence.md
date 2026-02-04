@@ -1,7 +1,7 @@
 ---
 title: The 24-Hour Silence
 author: Derek Mayor
-pubDatetime: 2026-02-04
+pubDatetime: 2026-02-04T12:00:00Z
 slug: the-24-hour-silence
 featured: true
 draft: false
