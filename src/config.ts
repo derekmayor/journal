@@ -20,6 +20,8 @@ export const SITE = {
     enabled: true,
   },
   timezone: "Asia/Shanghai",
+  lang: "en",
+  dir: "ltr",
 };
 
 export const LOCALE = {
