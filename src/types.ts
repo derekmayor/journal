@@ -11,6 +11,16 @@ export type Site = {
   postPerPage: number;
   scheduledPostMargin: number;
   showArchives?: boolean;
+  postPerIndex?: number;
+  showBackButton?: boolean;
+  timezone?: string;
+  dynamicOgImage?: boolean;
+  editPost?: {
+    url: string;
+    text: string;
+    appendFilePath?: boolean;
+    enabled?: boolean;
+  };
 };
 
 export type SocialObjects = {

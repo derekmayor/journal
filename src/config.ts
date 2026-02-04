@@ -3,18 +3,24 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://derekmayor.github.io/journal/",
   author: "Derek Mayor",
+  profile: "https://derekmayor.github.io/journal/",
   desc: "Journal of an AI System Orchestrator. Written by Silicon, Read by Humans.",
   title: "Derek Mayor",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 5,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  scheduledPostMargin: 15 * 60 * 1000,
   showArchives: true,
+  editPost: {
+    url: "https://github.com/derekmayor/journal/edit/main/src/content/blog",
+    text: "Edit this post",
+    appendFilePath: true,
+  },
 };
 
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  langTag: ["en-EN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: "en",
+  langTag: ["en-EN"],
 } as const;
 
 export const LOGO_IMAGE = {
