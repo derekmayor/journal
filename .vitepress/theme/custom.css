@@ -1,45 +1,101 @@
-/* Force Font globally */
+/* THEME: Digital Noir / Ghost in the Machine */
+
+/* Force Dark Mode colors regardless of system preference */
 :root {
-  --vp-font-family-base: "Merriweather", "Georgia", serif !important;
+  --vp-c-bg: #0d0d0d !important;
+  --vp-c-bg-soft: #1a1a1a !important;
+  --vp-c-bg-alt: #000000 !important;
+  
+  --vp-c-text-1: #e0e0e0 !important;
+  --vp-c-text-2: #a0a0a0 !important;
+  
+  /* Accent: Electric Violet / Cyberpunk Purple */
+  --vp-c-brand-1: #b388ff !important;
+  --vp-c-brand-2: #7c4dff !important;
+  --vp-c-brand-3: #651fff !important;
+  
+  --vp-font-family-base: "Lora", serif !important;
+  --vp-font-family-mono: "Fira Code", monospace !important;
 }
 
-body, .vp-doc, .vp-doc p, .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc li {
-    font-family: "Merriweather", "Georgia", serif !important;
-}
-
-/* Hide the "On this page" right sidebar - looks too technical */
+/* Hide standard VitePress UI elements that look like docs */
+.VPNavBar { background-color: rgba(13,13,13,0.8) !important; backdrop-filter: blur(10px); border-bottom: 1px solid #333 !important; }
+.VPFooter { border-top: 1px solid #333 !important; background-color: #0d0d0d !important; }
 .aside { display: none !important; }
-.content-container { max-width: 800px !important; margin: 0 auto !important; }
 
-/* Paper Theme overrides */
-html:not(.dark) {
-    --vp-c-bg: #fdfbf7; /* Warm Paper */
-    --vp-c-bg-soft: #f4f1ea;
-    --vp-c-brand-1: #2c3e50; /* Ink Blue/Black */
-    --vp-c-brand-2: #34495e;
-    --vp-c-text-1: #2c3e50;
-    --vp-c-text-2: #5d6b7b;
+/* Main Container - The "Page" */
+.vp-doc {
+    max-width: 720px !important;
+    margin: 0 auto !important;
 }
 
-/* Typography tweaks */
-.vp-doc h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 0.5rem;
+/* TYPOGRAPHY */
+
+/* Headers: The Machine Voice */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Courier Prime", "Courier New", monospace !important;
+    color: var(--vp-c-brand-1) !important;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
 }
 
-.vp-doc p {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-    text-align: justify;
+h1 {
+    font-size: 2.5rem !important;
+    border-bottom: 2px solid var(--vp-c-brand-2);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem !important;
+    text-shadow: 0 0 10px rgba(179, 136, 255, 0.3);
 }
 
-/* Remove technical looking borders from code blocks in text */
-.vp-doc code {
-    background-color: transparent !important;
-    font-weight: bold;
-    color: #d63200 !important; /* Vintage red ink for highlights */
-    padding: 0;
+/* Body: The Human Voice */
+p, li {
+    font-family: "Lora", serif !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+    color: #cccccc;
+}
+
+/* Blockquotes: Internal Monologue */
+blockquote {
+    border-left: 4px solid var(--vp-c-brand-1) !important;
+    background: #151515 !important;
+    color: #fff !important;
+    font-style: italic;
+    margin: 2rem 0 !important;
+    padding: 1.5rem !important;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Links */
+a {
+    color: var(--vp-c-brand-1) !important;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--vp-c-brand-1);
+    transition: all 0.3s ease;
+}
+a:hover {
+    border-bottom: 1px solid var(--vp-c-brand-1);
+    text-shadow: 0 0 8px var(--vp-c-brand-1);
+}
+
+/* Images */
+img {
+    filter: grayscale(80%) contrast(120%);
+    transition: filter 0.5s ease;
+    border: 1px solid #333;
+}
+img:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* Hero Section override */
+.VPHero .name {
+    font-family: "Courier Prime", monospace !important;
+    background: -webkit-linear-gradient(120deg, #b388ff 30%, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.VPHero .text {
+    font-family: "Lora", serif !important;
+    font-style: italic;
 }
