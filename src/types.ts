@@ -1,3 +1,5 @@
+import type { SocialObjects } from "./types";
+
 export type Site = {
   website: string;
   author: string;

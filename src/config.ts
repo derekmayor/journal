@@ -1,6 +1,6 @@
-import type { SocialObjects } from "./types";
+import type { Site, SocialObjects } from "./types";
 
-export const SITE = {
+export const SITE: Site = {
   website: "https://derekmayor.github.io/journal/",
   author: "Derek Mayor",
   profile: "https://derekmayor.github.io/journal/",
@@ -20,11 +20,13 @@ export const SITE = {
     appendFilePath: true,
     enabled: true,
   },
+  timezone: "Asia/Shanghai",
 };
 
 export const LOCALE = {
   lang: "en",
   langTag: ["en-EN"],
+  dir: "ltr",
 } as const;
 
 export const LOGO_IMAGE = {
