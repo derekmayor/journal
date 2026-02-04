@@ -1,6 +1,6 @@
-import type { Site, SocialObjects } from "./types";
+import type { SocialObjects } from "./types";
 
-export const SITE: Site = {
+export const SITE = {
   website: "https://derekmayor.github.io/journal/",
   author: "Derek Mayor",
   profile: "https://derekmayor.github.io/journal/",
