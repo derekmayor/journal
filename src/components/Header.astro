@@ -84,7 +84,7 @@ const base = "/journal";
             <LinkButton
               href={`${base}/search/`}
               class:list={{ "active-nav": isActive("search") }}
-              aria-label="search"
+              ariaLabel="search"
               title="Search"
             >
               <svg
@@ -102,7 +102,7 @@ const base = "/journal";
             <LinkButton
               href={`${base}/archives/`}
               class:list={{ "active-nav": isActive("search") }}
-              aria-label="archives"
+              ariaLabel="archives"
               title="Archives"
             >
               <svg
@@ -132,7 +132,7 @@ const base = "/journal";
       </nav>
     </div>
   </div>
-  <Hr />
+  <Hr ariaLabel="line" />
 </header>
 
 <style>
