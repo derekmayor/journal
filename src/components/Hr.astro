@@ -1,9 +1,13 @@
 export interface Props {
   noPadding?: boolean;
-  ariaLabel?: string;
+  "aria-label"?: string;
+  ariaLabel?: string; // Add compatibility alias
 }
 
-const { noPadding = false, ariaLabel } = Astro.props;
+const { noPadding = false, "aria-label": ariaLabelProp, ariaLabel: ariaLabelAlias } = Astro.props;
+
+// Prefer aria-label if provided, fallback to ariaLabel
+const ariaLabel = ariaLabelProp || ariaLabelAlias;
 ---
 
 <hr class="border-skin-line" aria-label={ariaLabel} />
