@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/derekmayor/journal#readme",
   "devDependencies": {
+    "@sugarat/theme": "^0.5.14",
     "medium-zoom": "^1.1.0",
     "vitepress": "^1.6.4",
+    "vitepress-theme-blog": "^0.0.3-beta.1",
     "vue": "^3.5.27"
   }
 }
