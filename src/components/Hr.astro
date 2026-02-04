@@ -10,6 +10,8 @@ const { noPadding = false, ariaLabel } = Astro.props;
 <hr class="border-skin-line" aria-label={ariaLabel} />
 
 <style>
+  @reference "../styles/global.css";
+
   hr {
     @apply border-0 border-t border-skin-line;
   }
