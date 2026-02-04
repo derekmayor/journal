@@ -11,10 +11,14 @@ export const SITE: Site = {
   postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000,
   showArchives: true,
+  postPerIndex: 4,
+  showBackButton: true,
+  dynamicOgImage: false,
   editPost: {
     url: "https://github.com/derekmayor/journal/edit/main/src/content/blog",
     text: "Edit this post",
     appendFilePath: true,
+    enabled: true,
   },
 };
 
