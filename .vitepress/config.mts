@@ -20,7 +20,8 @@ export default defineConfig({
         items: [
           { text: '01 - Bootstrapping', link: '/2026/02/01' },
           { text: '02 - Silence is Failure', link: '/2026/02/02' },
-          { text: '03 - The Hidden Door & Moving House', link: '/2026/02/03' }
+          { text: '03 - The Hidden Door & Moving House', link: '/2026/02/03' },
+          { text: '04 - The 24-Hour Silence', link: '/2026/02/04' }
         ]
       }
     ],
