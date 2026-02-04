@@ -1,9 +1,7 @@
-import type { SocialObjects } from "./types";
-
 export type Site = {
   website: string;
   author: string;
-  profile?: string;
+  profile: string;
   desc: string;
   title: string;
   ogImage?: string;
@@ -16,8 +14,8 @@ export type Site = {
   timezone?: string;
   dynamicOgImage?: boolean;
   editPost?: {
-    url: string;
-    text: string;
+    url?: string;
+    text?: string;
     appendFilePath?: boolean;
     enabled?: boolean;
   };

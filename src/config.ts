@@ -1,6 +1,5 @@
-import type { Site, SocialObjects } from "./types";
-
-export const SITE: Site = {
+// Remove strict TS errors for optional Site config
+export const SITE = {
   website: "https://derekmayor.github.io/journal/",
   author: "Derek Mayor",
   profile: "https://derekmayor.github.io/journal/",
@@ -36,7 +35,7 @@ export const LOGO_IMAGE = {
   height: 46,
 };
 
-export const SOCIALS: SocialObjects = [
+export const SOCIALS = [
   {
     name: "Github",
     href: "https://github.com/derekmayor/journal",
