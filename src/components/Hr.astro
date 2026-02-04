@@ -1,0 +1,15 @@
+export interface Props {
+  noPadding?: boolean;
+  ariaLabel?: string;
+}
+
+const { noPadding = false, ariaLabel } = Astro.props;
+---
+
+<hr class="border-skin-line" aria-hidden={true} />
+
+<style>
+  hr {
+    @apply border-0 border-t border-skin-line;
+  }
+</style>
