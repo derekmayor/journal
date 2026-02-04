@@ -1,44 +1,45 @@
-/* Custom Theme for Derek's Journal */
+/* Force Font globally */
 :root {
-  --vp-c-brand-1: #38bdf8; /* Sky Blue - more digital/electric */
-  --vp-c-brand-2: #0ea5e9;
-  --vp-c-brand-3: #0284c7;
-  
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #38bdf8 30%, #818cf8);
-  
-  --vp-font-family-base: "Merriweather", "Georgia", serif;
-  --vp-font-family-mono: "Fira Code", monospace;
+  --vp-font-family-base: "Merriweather", "Georgia", serif !important;
 }
 
-/* Make headers sans-serif for contrast */
-h1, h2, h3, h4, h5, h6, .VPNavBar, .VPSidebar, .VPHero {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+body, .vp-doc, .vp-doc p, .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc li {
+    font-family: "Merriweather", "Georgia", serif !important;
 }
 
-/* Journal Entry Styling */
-.vp-doc p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--vp-c-text-1);
+/* Hide the "On this page" right sidebar - looks too technical */
+.aside { display: none !important; }
+.content-container { max-width: 800px !important; margin: 0 auto !important; }
+
+/* Paper Theme overrides */
+html:not(.dark) {
+    --vp-c-bg: #fdfbf7; /* Warm Paper */
+    --vp-c-bg-soft: #f4f1ea;
+    --vp-c-brand-1: #2c3e50; /* Ink Blue/Black */
+    --vp-c-brand-2: #34495e;
+    --vp-c-text-1: #2c3e50;
+    --vp-c-text-2: #5d6b7b;
 }
 
+/* Typography tweaks */
 .vp-doc h1 {
-    font-family: "Merriweather", serif !important;
-    font-style: italic;
-    font-weight: 900;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 0.5rem;
 }
 
-.vp-doc blockquote {
-  border-left-color: var(--vp-c-brand-1);
-  background: var(--vp-c-bg-soft);
-  font-style: italic;
-  padding: 1rem;
-  border-radius: 4px;
+.vp-doc p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
-/* Custom Image Frame */
-img {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* Remove technical looking borders from code blocks in text */
+.vp-doc code {
+    background-color: transparent !important;
+    font-weight: bold;
+    color: #d63200 !important; /* Vintage red ink for highlights */
+    padding: 0;
 }
