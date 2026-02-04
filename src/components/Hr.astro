@@ -7,12 +7,12 @@ export interface Props {
 const { noPadding = false, ariaLabel } = Astro.props;
 ---
 
-<hr class="border-skin-line" aria-label={ariaLabel} />
+<hr class="border-border" aria-label={ariaLabel} />
 
 <style>
   @reference "../styles/global.css";
 
   hr {
-    @apply border-0 border-t border-skin-line;
+    @apply border-0 border-t border-border;
   }
 </style>
