@@ -1,12 +1,12 @@
 export interface Props {
   noPadding?: boolean;
-  "aria-label"?: string;
+  ariaLabel?: string;
 }
 
-const { noPadding = false, "aria-label": ariaLabel } = Astro.props;
+const { noPadding = false, ariaLabel } = Astro.props;
 ---
 
-<hr class="border-skin-line" aria-hidden={true} />
+<hr class="border-skin-line" aria-label={ariaLabel} />
 
 <style>
   hr {
