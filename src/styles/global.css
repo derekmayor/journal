@@ -1,84 +1,38 @@
-@import "tailwindcss";
-
-/* 
-  Tailwind v4 theme configuration 
-*/
-@theme {
-  /* Font Families */
-  --font-app: var(--font-google-sans-code);
-  
-  /* Colors - Light Mode */
-  --color-background: #fdfdfd;
-  --color-foreground: #282728;
-  --color-accent: #006cac;
-  --color-muted: #e6e6e6;
-  --color-border: #ece9e9;
-  
-  /* Skin colors required by the theme */
-  --color-skin-fill: var(--color-background);
-  --color-skin-base: var(--color-foreground);
-  --color-skin-accent: var(--color-accent);
-  --color-skin-inverted: var(--color-background);
-  --color-skin-card: #ffffff;
-  --color-skin-card-muted: var(--color-muted);
-  --color-skin-line: var(--color-border);
-}
-
-/* Dark Mode Overrides via data-theme attribute */
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
-  :root[data-theme="dark"] {
-    --color-background: #212737;
-    --color-foreground: #eaedf3;
-    --color-accent: #ff6b01;
-    --color-muted: #343f60;
-    --color-border: #ab4b08;
-    
-    --color-skin-fill: var(--color-background);
-    --color-skin-base: var(--color-foreground);
-    --color-skin-accent: var(--color-accent);
-    --color-skin-inverted: var(--color-background);
-    --color-skin-card: #1a1f2e;
-    --color-skin-card-muted: var(--color-muted);
-    --color-skin-line: var(--color-border);
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
   }
+}
 
-  /* Base Styles */
-  * {
-    @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
+/* Custom utilities */
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
   }
-  html {
-    @apply overflow-y-scroll scroll-smooth;
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+  
+  /* Missing utility classes from previous theme */
+  .bg-skin-accent { @apply bg-zinc-900; }
+  .text-skin-inverted { @apply text-white; }
+  .border-skin-line { @apply border-zinc-200; }
+}
+
+@layer base {
+  * {
+    @apply border-zinc-200; /* Fallback for border-border since it is custom util */
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+    @apply bg-white text-zinc-900;
   }
-  a,
-  button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
-  }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
-}
-
-/* Utilities */
-@utility max-w-app {
-  @apply max-w-3xl;
-}
-
-@utility app-layout {
-  @apply mx-auto w-full max-w-app px-4;
-}
-
-.active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
-}
-
-:target {
-  scroll-margin-block: 1rem;
 }
