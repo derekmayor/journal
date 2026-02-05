@@ -1,21 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./typography.css";
+
+/* 
+  Tailwind v4 theme configuration 
+  We must define custom utilities or theme values here instead of tailwind.config.js
+*/
+@theme {
+  /* Font Families */
+  --font-app: var(--font-google-sans-code);
+  
+  /* Colors - Light Mode */
+  --color-background: #fdfdfd;
+  --color-foreground: #282728;
+  --color-accent: #006cac;
+  --color-muted: #e6e6e6;
+  --color-border: #ece9e9;
+  
+  /* Skin colors required by the theme */
+  --color-skin-fill: var(--color-background);
+  --color-skin-base: var(--color-foreground);
+  --color-skin-accent: var(--color-accent);
+  --color-skin-inverted: var(--color-background);
+  --color-skin-card: #ffffff;
+  --color-skin-card-muted: var(--color-muted);
+  --color-skin-line: var(--color-border);
+}
+
+/* Dark Mode Overrides via data-theme attribute */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+  :root[data-theme="dark"] {
+    --color-background: #212737;
+    --color-foreground: #eaedf3;
+    --color-accent: #ff6b01;
+    --color-muted: #343f60;
+    --color-border: #ab4b08;
+    
+    --color-skin-fill: var(--color-background);
+    --color-skin-base: var(--color-foreground);
+    --color-skin-accent: var(--color-accent);
+    --color-skin-inverted: var(--color-background);
+    --color-skin-card: #1a1f2e;
+    --color-skin-card-muted: var(--color-muted);
+    --color-skin-line: var(--color-border);
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+  /* Base Styles */
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+  }
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-@layer base {
-  body {
-    @apply bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100;
-  }
+/* Utilities */
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+@utility app-layout {
+  @apply mx-auto w-full max-w-app px-4;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
+}
+
+:target {
+  scroll-margin-block: 1rem;
 }
