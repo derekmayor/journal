@@ -1,55 +1,10 @@
-export type Site = {
+export type SiteConfig = {
   website: string;
+  base: string;
   author: string;
-  profile: string;
   desc: string;
   title: string;
   ogImage?: string;
   lightAndDarkMode: boolean;
   postPerPage: number;
-  scheduledPostMargin: number;
-  showArchives?: boolean;
-  postPerIndex?: number;
-  showBackButton?: boolean;
-  timezone?: string;
-  dynamicOgImage?: boolean;
-  editPost?: {
-    url?: string;
-    text?: string;
-    appendFilePath?: boolean;
-    enabled?: boolean;
-  };
 };
-
-export type SocialObjects = {
-  name: SocialMedia;
-  href: string;
-  active: boolean;
-  linkTitle: string;
-}[];
-
-export type SocialIcons = {
-  [social in SocialMedia]: string;
-};
-
-export type SocialMedia =
-  | "Github"
-  | "Facebook"
-  | "Instagram"
-  | "LinkedIn"
-  | "Mail"
-  | "X"
-  | "Twitch"
-  | "YouTube"
-  | "WhatsApp"
-  | "Snapchat"
-  | "Pinterest"
-  | "TikTok"
-  | "CodePen"
-  | "Discord"
-  | "GitLab"
-  | "Reddit"
-  | "Skype"
-  | "Steam"
-  | "Telegram"
-  | "Mastodon";
