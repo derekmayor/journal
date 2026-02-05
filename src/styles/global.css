@@ -1,9 +1,7 @@
 @import "tailwindcss";
-@import "./typography.css";
 
 /* 
   Tailwind v4 theme configuration 
-  We must define custom utilities or theme values here instead of tailwind.config.js
 */
 @theme {
   /* Font Families */
