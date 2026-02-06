@@ -4,35 +4,40 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --border: 240 5.9% 90%;
+    /* Light Mode: Warm Editorial (The New Yorker / Paper) */
+    --background: 40 20% 97%;  /* #F9F8F4 Warm Paper */
+    --foreground: 30 10% 16%;  /* #2D2A26 Warm Charcoal */
+    --muted: 40 10% 92%;       /* Slightly darker paper */
+    --muted-foreground: 30 5% 45%; /* Warm Gray */
+    --border: 30 5% 88%;       /* Soft separator */
+    --primary: 300 80% 60%;    /* #D946EF Magenta (Vintage Accent) */
+    --primary-foreground: 0 0% 100%;
   }
-}
 
-/* Custom utilities */
-@layer utilities {
-  .border-border {
-    border-color: hsl(var(--border));
+  .dark {
+    /* Dark Mode: Soft Charcoal (Obsidian) */
+    --background: 30 5% 6%;    /* #111110 Warm Obsidian */
+    --foreground: 40 10% 90%;  /* #EAE9E4 Warm White */
+    --muted: 30 5% 12%;        /* Darker surface */
+    --muted-foreground: 30 5% 60%; /* Warm mid-gray */
+    --border: 30 5% 16%;       /* #2A2A28 Subtle edge */
+    --primary: 300 60% 70%;    /* Muted Magenta */
+    --primary-foreground: 0 0% 100%;
   }
-  .bg-background {
-    background-color: hsl(var(--background));
+
+  body {
+    /* Selection: Yellow highlighter style */
+    @apply bg-background text-foreground antialiased selection:bg-yellow-200 selection:text-black dark:selection:bg-yellow-900 dark:selection:text-white;
+    font-family: 'Geist Mono', monospace; 
   }
-  .text-foreground {
-    color: hsl(var(--foreground));
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newsreader Variable', serif; 
+    @apply font-semibold tracking-tight text-foreground;
   }
   
-  /* Missing utility classes from previous theme */
-  .bg-skin-accent { @apply bg-zinc-900; }
-  .text-skin-inverted { @apply text-white; }
-  .border-skin-line { @apply border-zinc-200; }
-}
-
-@layer base {
-  * {
-    @apply border-zinc-200; /* Fallback for border-border since it is custom util */
-  }
-  body {
-    @apply bg-white text-zinc-900;
+  /* Link hover effect */
+  a:hover {
+    @apply text-foreground transition-colors;
   }
 }

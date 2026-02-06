@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+// Supports weights 200-800
+import '@fontsource/newsreader';
+// Supports weights 100-900
+import '@fontsource/geist-mono';
 
 interface Props {
   title: string;
@@ -15,13 +19,27 @@ const { title } = Astro.props;
     <meta name="description" content="Derek Mayor Journal" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/journal/favicon.svg" />
+    <link rel="alternate icon" href="/journal/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans antialiased min-h-screen">
+  <body class="bg-background text-foreground font-sans antialiased min-h-screen">
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <slot />
   </body>
 </html>
